@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Car game</title>
+		<link rel="stylesheet" type="text/css" href="preloader.css">
+		<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+		<script src="jquery.min.js"></script>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			.hide {
+				display: none;
+			}
+			.carGame {
+				height: 100vh;
+				width: 100vw;
+				background: url("grassbg.jpg");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			.gameArea {
+				height: 100vh;
+				width: 420px;
+				background: #444;
+				margin: auto;
+				position: relative;
+				overflow: hidden;
+				border-left: 5px dashed #c8d6e5;
+				border-right: 5px dashed #c8d6e5;
+			}
+			.score {
+				position: absolute;
+				top: 10px;
+				left: 30px;
+				color: #fff;
+				background: green;
+				line-height: 70px;
+				padding-left: 10px;
+				min-width: 200px;
+				font-size: 1.5rem;
+				font-family: 'Righteous', cursive;
+				box-shadow: 0 5px 5px #777;
+			}
+			.startScreen {
+				background: #ee5253;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: #fff;
+				line-height: 40px;
+				z-index: 2;
+				text-align: center;
+				margin: auto;
+				width: 50%;
+				cursor: pointer;
+				font-size: 20px;
+				letter-spacing: 4px;
+				text-transform: uppercase;
+				box-shadow: 0 5px 5px #777;
+			}
+			.lines {
+				height: 100px;
+				width: 10px;
+				position: absolute;
+				margin-left: 205px;
+				background: #fff;
+			}
+			.car,
+			.fukingCar {
+				height: 80px;
+				width: 50px;
+				background-color: green;
+				background-image: url("car.png");
+				background-blend-mode: darken;
+				position: absolute;
+				bottom: 70px;
+				box-shadow: 2px 2px 18px #000;
+				border-radius: 7px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(window).on('load', function() {
+				$('.preloader').fadeOut();
+				console.log('loading');
+			});
+		</script>
+	</head>
+	<body>
+		<!-- Preloader start -->
+		<div class="preloader">
+			<div class="loading">
+				<h1>
+					<span>L</span><span>o</span><span>a</span><span>d</span><span>i</span
+					><span>n</span><span>g</span><span>.</span><span>.</span
+					><span>.</span>
+				</h1>
+			</div>
+		</div>
+		<!-- Preloader end -->
+		<div class="carGame">
+			<div class="score"></div>
+			<div class="startScreen">
+				<p>
+					Click here to start <br />
+					Arrow keys, or W-S-A-D keys to move <br />
+					If you hit car, you'll lose.
+				</p>
+			</div>
+			<div class="gameArea"></div>
+		</div>
+		<script src="gameScript.js"></script>
+	</body>
+</html>
